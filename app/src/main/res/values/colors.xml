@@ -11,4 +11,5 @@
     <color name="gray">#EEEEEE</color>
     <color name="color_hint">#bababa</color>
     <color name="edittext_background_color">#F5F5F5</color>
+    <color name="dark_gray">#49423d</color>
 </resources>

@@ -18,4 +18,5 @@
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="height_spinner">48dp</dimen>
     <dimen name="dropdown_padding">12dp</dimen>
+    <dimen name="logo_big_size">300dp</dimen>
 </resources>

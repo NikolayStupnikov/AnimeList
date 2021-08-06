@@ -13,11 +13,14 @@ class AnimeItemViewModel(
     var name: ObservableField<Titles> = ObservableField(anime.attributes?.titles)
 
     fun onItemClick() {
-        listener.onItemClick()
+        listener.onItemClick(
+            anime.id,
+            anime.attributes?.titles
+        )
     }
 
     interface AnimeItemViewModelListener {
-        fun onItemClick()
+        fun onItemClick(id: Int, titles: Titles?)
     }
 
 }

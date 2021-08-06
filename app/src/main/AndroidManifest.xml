@@ -28,6 +28,10 @@
             android:label="@string/filter"
             android:windowSoftInputMode="stateHidden">
         </activity>
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:label="@string/no_name">
+        </activity>
     </application>
 
 </manifest>

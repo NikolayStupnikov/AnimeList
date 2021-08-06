@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="ru.nukolay.stupnikov.animelist.R" />
         <variable
             name="viewModel"
             type="ru.nukolay.stupnikov.animelist.ui.main.anime.AnimeItemViewModel" />
@@ -32,6 +33,7 @@
                 android:layout_gravity="center_vertical"
                 tools:src="@drawable/icon_logo"
                 app:imageUrl="@{viewModel.imageUrl}"
+                app:size="@{R.dimen.logo_size}"
                 android:contentDescription="@string/logo" />
 
             <TextView

@@ -10,6 +10,7 @@ import ru.nukolay.stupnikov.animelist.ViewModelProviderFactory
 import ru.nukolay.stupnikov.animelist.data.DataManager
 import ru.nukolay.stupnikov.animelist.ui.base.BaseActivity
 import ru.nukolay.stupnikov.animelist.ui.base.BaseViewModel
+import ru.nukolay.stupnikov.animelist.ui.detail.DetailViewModel
 import ru.nukolay.stupnikov.animelist.ui.filter.FilterViewModel
 import ru.nukolay.stupnikov.animelist.ui.main.anime.AnimeRecyclerViewAdapter
 import ru.nukolay.stupnikov.animelist.ui.main.MainViewModel
@@ -36,6 +37,16 @@ class ActivityModule(private val activity: BaseActivity<out ViewDataBinding, out
                 supplier
         )
         return ViewModelProvider(activity, factory).get(FilterViewModel::class.java)
+    }
+
+    @Provides
+    fun provideDetailViewModel(dataManager: DataManager): DetailViewModel {
+        val supplier: Supplier<DetailViewModel> = Supplier { DetailViewModel(dataManager) }
+        val factory: ViewModelProviderFactory<DetailViewModel> = ViewModelProviderFactory(
+                DetailViewModel::class.java,
+                supplier
+        )
+        return ViewModelProvider(activity, factory).get(DetailViewModel::class.java)
     }
 
     @Provides

@@ -26,14 +26,14 @@ object BindingUtils {
     }
 
     @JvmStatic
-    @BindingAdapter("imageUrl")
-    fun setImageUrl(imageView: ImageView, url: String?) {
-        if (url != null) {
+    @BindingAdapter("imageUrl", "size")
+    fun setImageUrl(imageView: ImageView, url: String?, size: Int) {
+        if (!url.isNullOrEmpty()) {
             Picasso.get()
                 .load(url)
                 .resize(
-                    imageView.context.resources.getDimension(R.dimen.logo_size).toInt(),
-                    imageView.context.resources.getDimension(R.dimen.logo_size).toInt()
+                    imageView.context.resources.getDimension(size).toInt(),
+                    imageView.context.resources.getDimension(size).toInt()
                 )
                 .transform(RoundedCornersTransformation(
                     imageView.context.resources.getDimension(R.dimen.radius_logo).toInt(),
@@ -59,10 +59,10 @@ object BindingUtils {
             } else if (!titles.jp.isNullOrEmpty()) {
                 textView.text = titles.jp
             } else {
-                textView.text = textView.context.getString(R.string.empty)
+                textView.text = textView.context.getString(R.string.no_name)
             }
         } else {
-            textView.text = textView.context.getString(R.string.empty)
+            textView.text = textView.context.getString(R.string.no_name)
         }
     }
 

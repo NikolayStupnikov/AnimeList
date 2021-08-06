@@ -1,12 +1,16 @@
 package ru.nukolay.stupnikov.animelist.ui.main.anime
 
-import android.util.Log
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.nukolay.stupnikov.animelist.data.api.response.anime.AnimeApi
+import ru.nukolay.stupnikov.animelist.data.api.response.anime.Titles
 import ru.nukolay.stupnikov.animelist.databinding.ViewHolderAnimeBinding
 import ru.nukolay.stupnikov.animelist.ui.base.BaseViewHolder
+import ru.nukolay.stupnikov.animelist.ui.detail.DetailActivity
+import ru.nukolay.stupnikov.animelist.ui.detail.DetailActivity.Companion.ID_ANIME
+import ru.nukolay.stupnikov.animelist.ui.detail.DetailActivity.Companion.TITLES
 
 class AnimeRecyclerViewAdapter(private val animeList: MutableList<AnimeApi>) : RecyclerView.Adapter<BaseViewHolder>() {
 
@@ -36,7 +40,7 @@ class AnimeRecyclerViewAdapter(private val animeList: MutableList<AnimeApi>) : R
         notifyDataSetChanged()
     }
 
-    inner class AnimeViewHolder(private val binding: ViewHolderAnimeBinding) : BaseViewHolder(binding.getRoot()),
+    inner class AnimeViewHolder(private val binding: ViewHolderAnimeBinding) : BaseViewHolder(binding.root),
         AnimeItemViewModel.AnimeItemViewModelListener {
 
         override fun onBind(position: Int) {
@@ -46,8 +50,11 @@ class AnimeRecyclerViewAdapter(private val animeList: MutableList<AnimeApi>) : R
             binding.executePendingBindings()
         }
 
-        override fun onItemClick() {
-            Log.e("Hello", "Успех")
+        override fun onItemClick(id: Int, titles: Titles?) {
+            val intent = Intent(itemView.context, DetailActivity::class.java)
+            intent.putExtra(ID_ANIME, id)
+            intent.putExtra(TITLES, titles)
+            itemView.context.startActivity(intent)
         }
     }
 }

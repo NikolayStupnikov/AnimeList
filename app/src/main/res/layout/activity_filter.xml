@@ -6,7 +6,6 @@
     tools:context="ru.nukolay.stupnikov.animelist.ui.filter.FilterActivity">
 
     <data>
-        <import type="android.view.View" />
         <variable
             name="viewModel"
             type="ru.nukolay.stupnikov.animelist.ui.filter.FilterViewModel" />

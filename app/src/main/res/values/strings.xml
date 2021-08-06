@@ -2,7 +2,7 @@
     <string name="app_name">AnimeList</string>
     <string name="anime_list">List of anime</string>
     <string name="logo">Logo</string>
-    <string name="empty">Empty</string>
+    <string name="no_name">No name</string>
     <string name="swipe_to_update">The list is empty,\nplease swipe to update </string>
     <string name="search">Search</string>
     <string name="filter">Filter</string>
@@ -14,4 +14,11 @@
     <string name="choose_category">Choose category</string>
     <string name="all_categories">All categories</string>
     <string name="age_rating">Age rating</string>
+    <string name="rating">Rating:</string>
+    <string name="start_date">Start date:</string>
+    <string name="end_date">End date:</string>
+    <string name="age_rating_title">Age rating:</string>
+    <string name="episode_count">Episode count:</string>
+    <string name="episode_length">Episode Length:</string>
+    <string name="categories_title">Categories:</string>
 </resources>

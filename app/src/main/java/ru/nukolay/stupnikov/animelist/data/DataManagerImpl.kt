@@ -5,6 +5,7 @@ import ru.nukolay.stupnikov.animelist.StaticConfig.PAGE_LIMIT
 import ru.nukolay.stupnikov.animelist.data.api.BackendApi
 import ru.nukolay.stupnikov.animelist.data.api.response.anime.AnimeResponse
 import ru.nukolay.stupnikov.animelist.data.api.response.category.CategoryResponse
+import ru.nukolay.stupnikov.animelist.data.api.response.detail.DetailResponse
 import ru.nukolay.stupnikov.animelist.data.database.AppDatabase
 import ru.nukolay.stupnikov.animelist.data.database.entity.CategoryEntity
 import ru.nukolay.stupnikov.animelist.ui.filter.Filter
@@ -46,6 +47,14 @@ class DataManagerImpl
 
     override fun requestCategoryList(offset: Int): Single<CategoryResponse> {
         return backendApi.requestCategoryList(offset)
+    }
+
+    override fun getDetails(id: Int): Single<DetailResponse> {
+        return backendApi.getDetails(id)
+    }
+
+    override fun getCategoriesForAnime(id: Int): Single<CategoryResponse> {
+        return backendApi.getCategoriesForAnime(id)
     }
 
     override fun getAllCategories(): Single<List<CategoryEntity>> {
