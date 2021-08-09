@@ -102,5 +102,4 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
     kaptAndroidTest "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
     androidTestImplementation "org.mockito:mockito-android:$rootProject.mockitoVersion"
-    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:2.2.2'
 }
