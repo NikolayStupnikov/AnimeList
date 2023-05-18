@@ -92,6 +92,9 @@ dependencies {
     debugImplementation "com.readystatesoftware.chuck:library:$rootProject.chuckVersion"
     releaseImplementation "com.readystatesoftware.chuck:library:$rootProject.chuckVersion"
 
+    implementation "javax.annotation:javax.annotation-api:$rootProject.annotationVersion"
+    annotationProcessor("javax.annotation:javax.annotation-api:$rootProject.annotationVersion")
+
     // local unit tests
     testImplementation "junit:junit:4.12"
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
